@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="form_page_title">Membership Form</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_field">Phone Number</string>
+    <string name="address_field">Address Details</string>
+    <string name="submit_button">Submit Form</string>
 </resources>
