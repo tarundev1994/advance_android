@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myapplication.Utils.Constant
 
+//Form Page View Model
 class FormPageViewModel : ViewModel() {
     var name: MutableLiveData<String> = MutableLiveData()
     val email: MutableLiveData<String> = MutableLiveData()
@@ -16,14 +17,24 @@ class FormPageViewModel : ViewModel() {
 
     // the rest of your fields as normal
 
-    val formErrors = ObservableArrayList<FormErrors>()
+    var formErrors = ObservableArrayList<FormErrors>()
 
+    //Validation Function
     fun isFormValid(): Boolean {
         formErrors.clear()
-
-        if (name.value?.isNullOrEmpty() == true) {
+        if (name.value.isNullOrEmpty() == true) {
             formErrors.add(FormErrors.INVALID_NAME)
         }
+      else  if (email.value.isNullOrEmpty() == true) {
+            formErrors.add(FormErrors.INVALID_EMAIL)
+        }
+        else if (phoneNumber.value.toString().isNullOrEmpty() == true) {
+            formErrors.add(FormErrors.INVALID_CONTACT_DETAIL)
+        }
+        else  if (addressDetails.value.isNullOrEmpty() == true) {
+            formErrors.add(FormErrors.INVAlID_ADDRESS)
+        }
+
         // all the other validation you require
         return formErrors.isEmpty()
     }

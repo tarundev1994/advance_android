@@ -46,12 +46,13 @@ class FormPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var button=view.findViewById<Button>(R.id.submit)
         button.setOnClickListener{
+            Log.d(Constant.LOGCAT,"View Model Form Valid ${viewModel.formErrors}")
             if (viewModel.isFormValid()) {
                 viewModel.saveData()
                 // the rest of your logic to proceed to next screen etc.
             }
             else{
-                Log.d(Constant.LOGCAT,"Something error!")
+
             }
         }
     }
