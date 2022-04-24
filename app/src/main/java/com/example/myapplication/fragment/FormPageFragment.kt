@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -52,9 +53,10 @@ class FormPageFragment : Fragment() {
                 // the rest of your logic to proceed to next screen etc.
             }
             else{
-
+                activity?.let { it1 -> viewModel.displayMessage(it1,"Please fill all data in valid!") }
             }
         }
     }
+
 }
 

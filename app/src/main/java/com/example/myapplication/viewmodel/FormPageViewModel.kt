@@ -1,7 +1,9 @@
 package com.example.myapplication.viewmodel
 
+import android.content.Context
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.ObservableArrayList
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -42,6 +44,10 @@ class FormPageViewModel : ViewModel() {
     fun saveData() {
         Log.d(Constant.LOGCAT, "Save Data")
     }
+fun displayMessage(context:Context,message:String) {
+    return Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
+
+}
 
     enum class FormErrors {
         INVALID_NAME,
